@@ -1,0 +1,529 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Estilo da Home do Site Escola
+ *
+**/
+
+/* ===================== Base ===================== */
+.wrp-menu {height: 150px}
+//.sec-cont {margin-top: 30px}
+.mod-dest, .mod-vid {height: 568px}
+.mod-rec, .mod-educ, .mod-niver,
+.mod-tt, .mod-face, .mod-bible,
+.mod-cal, .mod-loc, .mod-banner, .mod-poll {height: 422px}
+.home div[class^="mod-"] {
+	box-shadow: 0px 2px 12px 0px #CECFD4;
+	margin-top: 30px;
+}
+.wrp-home {
+	margin-left: -15px;
+	margin-right: -15px;
+	& .img-cover {
+		max-height: 298px;
+		max-width: 348px;
+		overflow: hidden;
+		position: relative;
+		& .img-blur {
+			height: 319px;
+		}
+	}
+}
+.user-inter {
+	position: fixed;
+	right: 20px;
+	bottom: 0;
+	z-index: 999;
+	background-color: #cecece;
+	padding: 7px 15px;
+	border-radius: 5px 5px 0 0;
+}
+
+.titulo-inter {
+	text-align: center;
+    color: #027cd6;
+}
+
+.body-mod {padding: 0 15px 15px 15px}
+.wrp-title {
+	border-bottom: 1px solid $color-contact;
+	margin-bottom: 20px;
+	padding: 15px;
+	& .view-more {
+		color: #848484;
+		font-size: 0.9375rem;
+		font-weight: lighter;
+		margin-left: 5px;
+	}
+	& .more-icon {
+		position: absolute;
+		top: -9px;
+		left: 2.7px;
+	}
+}
+.title-mod {
+	display: inline-block;
+	font-size: 1.125rem;
+	font-weight: normal;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+.hamburger {
+	cursor: pointer;
+	height: 35px;
+	margin-top: 13px;
+	@include transition(all .5s ease-in-out);
+	@include transform(rotate(0));
+	width: 30px;
+	& div {
+		background: $white;
+		border-radius: 9px;
+		display: block;
+		height: 3px;
+		left: 0;
+		position: absolute;
+		width: 80%;
+		@include transition(all .25s ease-in-out);
+		@include transform(rotate(0));
+	}
+	& .tp {top: 0}
+	& .md {top: 8px}
+	& .bt {top: 16px}
+	&.open {
+		.tp, .bt {
+			left: 50%;
+			top: 18px;
+			width: 0%;
+		}
+		.md {@include transform(rotate(45deg))}
+		div:nth-child(3) {@include transform(rotate(-45deg))}
+	}
+}
+
+/* ===================== Módulo de Educação ===================== */
+.mod-educ {
+	background: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-educ;
+	margin-top: 30px;
+	padding: 0;
+	.title-mod {color: $color-educ}
+	.title-post {
+		border-bottom: 1px solid #EDEDED;
+		padding-bottom: 15px;
+	}
+	.first-vid {width: 100%}
+	.list-vid .title-post {
+		border-bottom: none;
+		overflow: hidden;
+		padding-bottom: 0;
+	}
+}
+
+/* ===================== Módulo de Recursos ===================== */
+.mod-rec {
+	background: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-rec;
+	margin-top: 30px;
+	padding: 0;
+	.wrp-title {margin-bottom: 0}
+	.title-mod {color: $color-rec}
+	a {
+		border-bottom: 1px solid #EEEEEE;
+		clear: both;
+		color: #929292;
+		display: block;
+		font-size: 18px;
+		padding: 8px 15px;
+		@include transition(all .3s ease);
+		&:hover {
+			color: $color-rec;
+			@include transition(all .3s ease);
+			.ico {background: url("img/sprite-hover.png") no-repeat 0 0 transparent}
+		}
+	}
+	.ico {
+		background: url("img/sprite-recursos.png") no-repeat 0 0 transparent;
+		width: 45px;
+		height: 45px;
+		display: inline-block;
+		float: left;
+		margin-right: 15px;
+	}
+	.txt {line-height: 45px;}
+}
+.content-rec {
+	height: 347px;
+	overflow: auto;
+}
+.rec-blog .ico {background-position: -6px -10px !important}
+.rec-jogos .ico {background-position: -3px -66px !important}
+.rec-tarefa .ico {background-position: -1px -127px !important}
+.rec-mapoteca .ico {background-position: -5px -188px !important}
+.rec-quiz .ico {background-position: -1px -248px !important}
+.rec-calendario .ico {background-position: -2px -309px !important}
+.rec-cpbedu .ico {background-position: -2px -368px !important}
+.rec-tutoriar .ico {background-position: -2px -428px !important}
+.rec-bibl .ico {background-position: -2px -482px !important}
+.rec-enem .ico {background-position: -2px -528px !important}
+
+/* ===================== Módulo de Destaques ===================== */
+.mod-dest {
+	background-color: $white;
+	padding: 0;
+	border-radius: 5px;
+	border-top: 5px solid $color-dest;
+	.title-mod {color: $color-dest}
+	.title-post {
+		font-size: 1.125rem;
+		margin-bottom: 5px;
+	}
+	.author-post {font-size: 0.8125rem}
+	.restrict {background: url(img/lock-dest.svg)}
+	img {border-radius: 3px}
+}
+.mini-dest {
+	margin-bottom: 30px;
+	figure {
+		display: inline-block;
+		float: left;
+		margin: 0 10px 0 0;
+		width: 65px;
+	}
+	.title-post {
+		font-size: 0.875rem;
+		line-height: 1.2;
+		margin: 0;
+	}
+	.author-post {
+		display: inline-block;
+		float: left;
+		font-size: 0.75rem;
+		padding: 0;
+	}
+}
+.post-mini {
+	& .title-post {margin-bottom: 5px}
+	& .author-post {border-bottom: none}
+	& .img-cover {
+		float: left;
+		margin-right: 15px;
+		max-width: 171px
+	}
+	& .desc-post {margin: 0}
+}
+
+/* ===================== Módulo de Vídeos ===================== */
+.mod-vid {
+	background-color: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-vid;
+	padding: 0;
+	.restrict {background: url(img/lock-vid.svg)}
+	.title-mod {color: $color-vid}
+	.title-post {
+		font-size: 1.125rem;
+		margin-top: 0 !important;
+		margin-bottom: 10px;
+	}
+	.item-gallery {
+		margin-bottom: 1rem;
+		& img {
+			max-height: 319px;
+			max-width: 372px;
+		}
+		.title-post {
+			cursor: pointer;
+			margin: 0;
+			overflow: hidden;
+			&:hover {text-decoration: none}
+		}
+	}
+	.item-gallery-video.full {
+		margin-bottom: 16px;
+		.gallery-poster > img.poster-video {
+			height: 65px;
+			top: 36%;
+			width: 65px;
+		}
+	}
+	.first-vid {
+		width: 100%;
+		height: 197px;
+	}
+}
+.title-vid {padding: 0 15px}
+.list-vid {
+	margin-top: 5px;
+	.item-gallery {margin-bottom:0}
+	li {
+		margin-top: 0;
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
+	p {
+		cursor: pointer;
+		font-size: 0.875rem;
+		margin: 0;
+	}
+	figure {
+		display: inline-block;
+		float: left;
+		margin-bottom: 0;
+		overflow: hidden;
+		position: relative;
+	}
+	.poster-video {
+		height: 25px !important;
+		left: 43% !important;
+		top: 30% !important;
+		width: 25px !important;
+	}
+	.title-post:hover {text-decoration: none}
+}
+.mini-poster {
+	float: left;
+	margin-right: 10px;
+	max-height: 50px;
+	max-width: 90px;
+}
+
+/* ===================== Módulo de Álbuns ===================== */
+.mod-alb {
+	background-color: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-alb;
+	margin-top: 30px;
+	padding: 0;
+	.wrp-title {
+		color: $color-alb;
+		position: relative;
+	}
+	.title-post {margin-top: 0}
+	.wrp-img {
+		margin-bottom: 24px;
+		&.double {max-width: 100%}
+	}
+	.wrp-icons {border: none}
+}
+.home .restricted-alb {
+	height: 97%;
+	left: 0;
+}
+.author-post.alb {margin-top: 5px}
+.prev-alb, .next-alb {
+	position: absolute;
+	top: 8px;
+}
+.mod-alb .icon-navigate-before, .mod-alb .icon-navigate-next {
+	color: $color-alb;
+	padding: 0 2px;
+	@include transition(all .4s ease);
+	&:hover {background: #EEDAFF}
+}
+.next-alb {right: 8px}
+.prev-alb {right: 45px}
+.item-gallery {margin-bottom:0}
+.title-restr {
+	color: $white;
+	font-size: 1.875rem;
+	margin: 15px 0 0 0;
+}
+.subtitle-restr {
+	color: $white;
+	font-size: 0.9375rem;
+	margin-top: 15px;
+}
+.lnk-restr {
+	color: $white;
+	border-bottom: 1px solid;
+	padding-bottom: 3px;
+	&:hover {color: $white}
+}
+.btn.restr {
+	background-color: $color-alb;
+	border-radius: 2px;
+	color: $white;
+	font-size: 1.2rem;
+	font-weight: 300;
+	margin-top: 40px;
+	padding: 10px 35px;
+}
+
+/* ===================== Módulo Sociais ===================== */
+.mod-tt, .mod-face {
+	background: $white;
+	border-radius: 5px;
+	margin-top: 30px;
+	padding: 0;
+}
+.mod-tt {
+	border-top: 5px solid $color-tt;
+	.wrp-title {color: $color-tt}
+}
+.mod-face {
+	border-top: 5px solid $color-face;
+	&.double {height: 874px}
+	.wrp-title {
+		color: $color-face;
+		margin-bottom: 5px;
+	}
+	.wrp-fb {padding: 0 5px 5px 5px}
+}
+.mod-face .fb_iframe_widget, .mod-face .fb_iframe_widget span, .mod-face .fb_iframe_widget span iframe[style] {
+	width: 100% !important;
+}
+
+/* ===================== Módulo Aniversariantes ===================== */
+.mod-niver {
+	background: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-aniv;
+	margin-top: 30px;
+	padding: 0;
+	.wrp-title {
+		color: $color-aniv;
+		margin-bottom: 0;
+	}
+}
+.wrp-list {
+	max-height: 347px;
+	overflow: auto;
+}
+.lst-niver {
+	margin-bottom: 0;
+	padding: 20px;
+	& li {
+		margin-bottom: 15px;
+		overflow: hidden;
+		&:last-child {margin-bottom: 0}
+	}
+}
+.lst-today {background-color: #EEEEEE}
+.today, .month {
+	color: $color-aniv;
+	float: right;
+	font-size: 0.75rem;
+}
+.img-niver, .letter-niver {
+	border-radius: 5px;
+	float: left;
+	margin-right: 10px;
+}
+.letter-niver {
+	background: #C0C0C0;
+	color: $white;
+	height: 45px;
+	line-height: 1;
+	font-size: 1.2rem;
+	padding: 14px 0;
+	text-align: center;
+	width: 45px;
+}
+.name-niver {font-weight: normal}
+.name-niver, .date-niver {
+	font-size: 0.875rem;
+	margin-bottom: 0;
+}
+.date-niver {color: #7F8187}
+.empty-niver {
+	height: 362px;
+	@include display(flex);
+	@include justify-content(center);
+	@include align-items(center);
+	img {width: 100%}
+}
+
+/* ===================== Módulo Promocionais ===================== */
+.carousel-indicators {
+	bottom: 0;
+	margin-bottom: 10px;
+}
+
+/* ===================== Módulo de Bíblia e Calendário ===================== */
+.mod-bible, .mod-cal {
+	background: $white;
+	border-radius: 5px;
+	margin-top: 30px;
+	padding: 0;
+	.body-mod {text-align: center}
+	img {max-width: 100%}
+}
+.mod-bible {
+	border-top: 5px solid $color-bible;
+	.title-mod {color: $color-bible}
+}
+.mod-cal {
+	border-top: 5px solid $color-cal;
+	.wrp-title {position: relative}
+	.title-mod {color: $color-cal}
+}
+
+/* ===================== Módulo Localização ===================== */
+.mod-loc {
+	background: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-loc;
+	margin-top: 30px;
+	padding: 0;
+	.wrp-title {margin-bottom: 0}
+	.title-mod {color: $color-loc}
+}
+
+/* ===================== Módulo Banner ===================== */
+.mod-banner {
+	background: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-ban;
+	margin-top: 30px;
+	padding: 0;
+	.wrp-title {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 13px;
+	}
+	.title-mod {color: $color-ban}
+	.carousel-item img {max-width: initial !important}
+	img {border-radius: 0 0 5px 5px}
+}
+
+/* ===================== Módulo Portal da Educação ===================== */
+.mod-portal {
+	background: $white;
+	border-radius: 5px;
+	border-top: 5px solid $color-portal;
+	margin-top: 30px;
+	padding: 0;
+	.wrp-title {position: relative}
+	.title-mod {color: $color-portal}
+	.categ-portal {
+		color: $color-portal;
+		font-size: 0.9375rem;
+		&:hover {color: $color-portal}
+	}
+	.title-post {
+		font-size: 1.125rem;
+		font-weight: normal;
+		line-height: 1.4rem;
+		margin-top: 0;
+	}
+	.desc-post {margin-top: 15px}
+}
+.mod-portal .icon-navigate-before, .mod-portal .icon-navigate-next {
+	color: $color-portal;
+	padding: 0 2px;
+	@include transition(all .4s ease);
+	&:hover {background: #E4ACBD}
+}
+
+/* ===================== Módulo Fixos ===================== */
+.mod-fixed {
+	background: $white;
+	border-radius: 5px;
+	margin-top: 30px;
+	padding: 0;
+	padding-top: 15px;
+	img {width: 100%}
+}

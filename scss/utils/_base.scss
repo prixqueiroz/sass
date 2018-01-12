@@ -1,0 +1,120 @@
+@charset "UTF-8";
+/**
+ *
+ * Adicionado o charset para evitar erro de compilação do Sass
+ * devido ao caracter inválido na US-ASCII
+ *
+ */
+
+body {
+	background-color: #E5E5E5;
+	color: $text-color;
+	font-family: $font-family;
+	font-weight: 300;
+}
+a:link {text-decoration: none}
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+.contact {
+	background-color: $white;
+	padding-bottom: 50px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 12px 0px #CECFD4;
+	margin: 0;
+	margin-top: 30px;
+}
+.team,
+.pics {
+	background-color: $white;
+	padding: 0;
+}
+.d-nn {display: none !important}
+.pos-r {position: relative}
+.overflow {overflow: hidden}
+.right {float: right !important}
+.clear-padding {padding: 0}
+.restrict {
+	display: inline-block;
+	height: 13px;
+	margin-right: 5px;
+	width: 10px;
+}
+.imgreplace {
+	overflow: hidden;
+	text-indent: -9999px;
+}
+.icon-navigate-before, .icon-navigate-next {
+	font-size: 1.7rem;
+	&:hover {
+		border-radius: 100%;
+		@include transition(all .4s ease);
+	}
+	&:before {vertical-align: -1px}
+}
+.icon-navigate-next:before {margin-right: -1px}
+.icon-navigate-before:before {margin-left: -1px}
+.off {
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
+.loader, .popup {
+	background: rgba(0, 0, 0, 0.7);
+	@include display(flex);
+	@include flex-direction(column);
+	@include justify-content(center);
+	@include align-items(center);
+	height: 100vh;
+	position: fixed;
+	width: 100vw;
+	z-index: 90;
+}
+.popup {
+	.wrp-bn {position: relative}
+	.icon-close3 {
+		cursor: pointer;
+		color: $color-help;
+		font-size: 1.7rem;
+		position: absolute;
+		right: -25px;
+		top: -35px;
+		z-index: 99;
+	}
+}
+.btn-see-inside {
+	position: absolute;
+	right: 52px;
+	bottom: 25px;
+	background-color: rgba(0, 0, 0, 0.7) ;
+	padding: 5px 15px;
+	color: #fff;
+	border-radius: 5px;
+}
+.wrp-home .btn-see-inside {right: 70px}
+
+/*
+** Formatação botão Scroll Top
+*/
+.top {
+	background: #656565;
+	border-radius: 3px;
+	bottom: 10%;
+	color: $white;
+	display: none;
+	font-size: 1.7rem;
+	opacity: .65;
+	padding: 3px 10px 0px 10px;
+	position: fixed;
+	right: 3%;
+	@include transition(all .3s ease-in-out);
+	&:hover {
+		color: $white;
+		opacity: 1;
+		@include transition(all .3s ease-in-out);
+	}
+	&:focus {color: $white}
+}
+

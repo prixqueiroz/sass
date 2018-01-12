@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Estilo da Paginação do Site das Escolas
+ *
+**/
+.rem-left-right .pgn-content {margin: 0 -15px;}
+.pgn-content {
+	background-color: $white;
+	/*margin-top: 15px;*/
+	text-align: center;
+	font-size: 0.9375rem;
+	padding: 10px 0 40px;
+	li, & a {
+		color: #414B58;
+    	display: block;
+	}
+}
+.pgn-nav li:hover {background-color: #eee}
+.pgn-nav {
+	@include display(inline-flex);
+	@include flex-direction(row);
+	margin-bottom: 0;
+	li {
+		/*margin-right: 10px;*/
+		border: 1px solid #ccc;
+		border-right: none;
+	    line-height: 35px;
+	    width: 35px;
+	    position: relative;
+		&:last-child {
+			margin-right: 0;
+			border-right: 1px solid #ccc;
+		}
+}
+.off, .off:hover {
+    background-color: #fff;
+    color: #aaa;
+}
+	.icon-play2,
+	.icon-forward,
+	.icon-rewind,
+	.icon-play2.icFirst {font-size: 1.2rem}
+	.icon-arrow-right16, .icon-arrow-left16 {
+        font-size: 1.3rem;
+	    position: absolute;
+	    top: 2px;
+	    left: 8px;
+	}
+}
+
+.num-pgn.active {
+	background-color: #414B58;
+    color: #fff;
+}
+.lPgn-off,
+.lPgn-on,
+.rPgn-on,
+.rPgn-off {
+	display: inline-block;
+	width: 18px;
+	height: 22px;
+}
+.lPgn-off {background: url(img/lPgn-inativo.png) no-repeat center 3px}
+.lPgn-on {background: url(img/lPgn-ativo.png) no-repeat center 3px}
+.rPgn-on {background: url(img/rPgn-ativo.png) no-repeat center 3px}
+.rPgn-off {background: url(img/rPgn-inativo.png) no-repeat center 3px}

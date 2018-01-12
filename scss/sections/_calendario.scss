@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Arquivo para estilizar o módulo de calendário na Home
+ *
+**/
+
+.mod-cal .icon-navigate-before, .mod-cal .icon-navigate-next {
+	color: $color-cal;
+	padding: 0 2px;
+	@include transition(all .4s ease);
+	&:hover {background: #E5E3B2}
+}
+.mod-cal {position: relative}
+.tbl-cal {
+	width: 100%;
+	th {
+		font-size: 1.125rem;
+		font-weight: normal;
+		padding-bottom: 30px;
+		text-align: center;
+	}
+	tbody {
+		font-size: 1.2rem;
+		font-weight: lighter;
+		line-height: 3rem;
+	}
+	.inactive {
+		color: #CAD0DB;
+		font-weight: lighter;
+	}
+	.today-cal {
+		background: url(img/background-cal.svg) no-repeat center center;
+		color: $white;
+	}
+	.has-event {
+		position: relative;
+		color: $text-color;
+		&:after {
+			color: #E1553A;
+			content: '....';
+			position: absolute;
+			bottom: -18px;
+			right: 2px;
+		}
+	}
+	.today-cal .has-event {color: $white}
+	.today-cal .has-event:after {
+		color: $white;
+		content: '....';
+		position: absolute;
+		bottom: -18px;
+		right: 1px;
+	}
+	td[data-day="01"] .has-event:after,
+	td[data-day="02"] .has-event:after,
+	td[data-day="03"] .has-event:after,
+	td[data-day="04"] .has-event:after,
+	td[data-day="05"] .has-event:after,
+	td[data-day="06"] .has-event:after,
+	td[data-day="07"] .has-event:after,
+	td[data-day="08"] .has-event:after,
+	td[data-day="09"] .has-event:after {right: -4px !important}
+}
+.events {
+	display: none;
+	text-align: left;
+	.date-full {
+		display: block;
+		font-size: 1.375rem;
+		font-weight: 400;
+	}
+	.day-week {
+		display: block;
+		font-size: 1.125rem;
+		font-weight: lighter;
+	}
+}
+.wrp-title.back {
+	display: none;
+	.prev-alb {
+		left: 8px;
+	}
+	.title-mod {margin-left: 30px}
+}
+.list-events {
+	margin-top: 40px;
+	li {margin-bottom: 20px}
+	a {
+		color: $text-color;
+		&:hover {text-decoration: underline}
+	}
+}
+.loader-cal {
+	background: rgba(255, 255, 255, 0.7);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 99;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+}

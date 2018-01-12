@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Arquivo para estilizar a seção da Timeline do Site Escola
+ *
+**/
+.img-timeline {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 30px;
+	.img-school {
+		max-height: 100%;
+		max-width: 100%;
+	}
+}
+.icn-size {
+	color: $white;
+	display: block;
+	font-size: 1.2rem;
+	left: 50%;
+	margin-left: -9px;
+	margin-top: -12px;
+	position: relative;
+	top: 50%;
+}
+.cd-container h2 {
+	font-size: 1.3rem;
+	margin-top: 30px !important;
+}
+
+/**
+ *
+ * Custom da Biblioteca de Timeline
+ *
+**/
+.cd-timeline-content {background: #EFEFEF}
+.cd-timeline-block {
+	&:nth-child(even) .cd-circle {background-color: #E79000}
+	&:nth-child(odd) .cd-circle {background-color: #6B9CE4}
+}

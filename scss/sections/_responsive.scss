@@ -1,0 +1,401 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Estilo responsivo do Site Escola
+ *
+**/
+
+@media only screen and (max-width : 1200px) {
+	.school-head {width: 280px}
+	.icon-comments2, .icon-eye4, .icon-clock5, .icon-calendar {margin-right: 10px}
+	.content {width: 100%}
+	.main-section.open.videos {padding-top: 30px}
+	.gallery-poster p {margin-bottom: 7px}
+	.gallery-poster > img {top: 43%}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+}
+
+@media only screen and (max-width : 1300px) {
+	.wrp-interact {
+		float: right;
+		margin: 12px 30px 0 0;
+	}
+	.wrp-links .menus li {
+		font-size: 0.875rem;
+		margin-right: 15px;
+		text-transform: uppercase;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+	// Home
+	.mod-dest, .mod-vid {height: 500px}
+	.mod-alb {height: 415px}
+	.mod-dest {
+		.author-post {font-size: 0.75rem}
+		.title-post {font-size: 1rem}
+		.mini-dest .title-post {font-size: 0.875rem}
+		.mini-dest .author-post {font-size: 0.625rem}
+	}
+	.mod-vid {
+		.item-gallery-video.full .gallery-poster > img.poster-video {
+			width: 45px;
+			height: 45px;
+		}
+		.first-vid {height: auto}
+		.title-post {
+			font-size: 1rem;
+			margin-bottom: 5px;
+		}
+		.mini-poster {width: 80px}
+		.list-vid p {font-size: 0.75rem}
+	}
+	.mod-rec a {font-size: 1rem}
+	.mod-niver {
+		.today, .month {display: none}
+	}
+	.mod-portal .title-post {font-size: 1rem}
+	.lock-alb {
+		height: 80px;
+		width: 80px;
+	}
+	.title-restr {
+		font-size: 1.5rem;
+		margin-top: 10px;
+	}
+	.subtitle-restr {margin-top: 5px}
+	.btn.restr {
+		font-size: 1rem;
+		margin-top: 0;
+		padding: 5px 30px;
+	}
+
+	// Categoria
+	.categ {margin-bottom: 20px}
+
+	// Menus
+	.wrp-logo {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.logo {
+		background: url(img/logo-mob.svg) no-repeat center center;
+		height: 130px;
+		width: 130px;
+		display: inline-block;
+	}
+	.school-head {
+		display: block;
+		margin: 20px 0 0 0;
+		text-align: center;
+		width: 100%;
+	}
+	.title-unit {display: inline-block; font-size: 1.25rem}
+	.name-unit {
+		font-size: 1.25rem;
+		margin-right: 0;
+	}
+	.city-unit {font-size: 1.25rem}
+	.wrp-menu {height: 50px}
+	.menu-site {
+		background-color: #2F3337;
+		opacity: 0;
+		ul {width: 100%}
+		.wrp-links {width: 100%}
+		.container.overflow {height: auto}
+		li.no-border {margin: 50px 0; width: 100%}
+		li:before {background: none !important}
+	}
+	.menu-portal {
+		position: fixed;
+		width: 100%;
+		z-index: 2;
+		box-shadow: 0 3px 10px -5px #000;
+	}
+	.wrp-links .menus {
+		padding-left: 20px;
+		width: 100%;
+		@include flex-direction(column);
+		@include align-items(flex-start);
+		li {
+			border-top: 1px solid #5A5A5A;
+			font-size: 1.125rem;
+			font-weight: lighter;
+			margin-right: 0;
+			padding: 15px;
+			width: 100%;
+		}
+	}
+	.menu-more.active {
+		padding: 10px 40px;
+		margin: 0;
+		left: 389px;
+		top: 0;
+		border-top: 0;
+		@include transition(opacity .3s ease, visibility .3s ease);
+	}
+	.menu-more {
+		li {
+			border-top: none !important;
+			padding: 0 !important;
+		}
+		@include transition(opacity .3s ease, visibility .3s ease);
+	}
+	.lnk-more {height: auto}
+	.menu-portal ul li {
+		margin-right: 10px;
+		font-size: 0.75rem;
+	}
+	.wrp-interact {margin-right: 30px}
+	.inp-search {margin-left: 10px}
+
+	// Equipe
+	.wrp-info {margin-top: 10px}
+
+	// Fotos
+	.title-album {
+		font-size: 1rem;
+		line-height: 1;
+	}
+
+	// Rodapé
+	.subtitle-footer {margin-top: 25px}
+
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+	.mod-dest, .mod-vid, .mod-alb {height: auto}
+	.mod-dest {margin-bottom: 30px}
+	.logo-bar {width: 40px}
+	.socials-info {width: 93%}
+	.wrp-interact {
+		margin: 2px;
+		float: none;
+		text-align: center;
+	}
+	.mod-vid .item-gallery-video.full .gallery-poster > img.poster-video {top: 43%}
+	.gallery-poster > img.poster-video {left: 49%}
+
+	.menu-site.mob {
+		overflow: auto;
+		width: 280px;
+	}
+	.logo {
+		background: url(img/logo-mob2.svg) no-repeat center center;
+		height: 92px;
+		width: 92px;
+		display: inline-block;
+	}
+	.menu-site li {border-bottom: none !important}
+	.wrp-links .menus li {
+		font-size: 1rem;
+		padding: 5px 15px;
+	}
+	.title-unit {display: inline-block; font-size: 1.125rem}
+	.name-unit {font-size: 1.125rem; margin-right: 0}
+	.city-unit {font-size: 1.125rem}
+	.home div[class^="mod-"] {height: auto}
+	.mod-vid {margin-top: 30px}
+	.menu-more.active {
+		position: relative;
+		left: 0;
+		margin-top: 0;
+		line-height: 1;
+		list-style-type: none;
+	}
+	.list-submenu li {line-height: 1}
+	.menu-site li.no-border {padding: 0}
+}
+
+/* Phones Landscape Mode */
+@media only screen and (max-width : 767px) {
+
+	body {cursor: pointer}
+
+	// Menu
+	.menu-portal {
+		height: 45px;
+		& ul {line-height: 45px}
+	}
+	.menu-site {
+		box-shadow: none;
+		top: 45px;
+		position: absolute;
+		width: 100%;
+		z-index: 99;
+		& ul {
+			display: block;
+			line-height: 45px;
+			margin-bottom: 0;
+		}
+		& li.active {border-bottom: 1px solid $color-contact}
+		& li {
+			border-bottom: 1px solid $color-contact;
+			padding-left: 15px;
+		}
+		& a {font-size: 0.9735rem}
+		& .container {padding: 0}
+	}
+	.menu-more {
+		position: absolute;
+		top: 420px;
+		z-index: 2;
+		@include box-shadow(0, 4px, 4px, rgba(0,0,0,.1));
+	}
+
+	// Categoria
+	.show {
+		max-height: 1000px;
+		overflow: hidden;
+		@include transition-duration(0.3s);
+		@include transition-timing-function(ease-in);
+	}
+	.hide {
+		margin: 0;
+		max-height: 0;
+		overflow: hidden;
+		padding: 0;
+		@include transition-duration(0.3s);
+		@include transition-timing-function(cubic-bezier(0, 1, 0.5, 1));
+	}
+	.categ {
+		margin: 20px 0;
+		position: relative;
+		& .title-section {margin-bottom: 0}
+		& .icon-arrow-down15 {
+			color: $color-categ;
+			font-size: 1.5rem;
+			font-weight: 300;
+			position: absolute;
+			right: 20%;
+			top: 25%;
+		}
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+	// Geral
+	.main-section {
+		margin-top: 0;
+		&.pics, &.equipe, &.sobre, &.pages {margin-top: 30px}
+	}
+	.search {width: 100%}
+
+	// Timeline
+	.cd-timeline-content h2 {font-size: 1.5rem}
+
+	// Menu
+	.profile-info {margin-top: 1px}
+	.hamburger {margin-left: 10px}
+	.btn-login {
+		margin-top: 10px;
+		margin-right: 7px;
+	}
+	.wrp-profile {margin-top: 3px}
+	.wrp-interact {margin-top: 10px}
+	.menu-site.mob {
+		overflow: auto;
+		width: 280px;
+	}
+	.logo {
+		background: url(img/logo-mob2.svg) no-repeat center center;
+		height: 92px;
+		width: 92px;
+		display: inline-block;
+	}
+	.menu-site li {border-bottom: 0}
+	.wrp-links .menus li {
+		font-size: 1rem;
+		padding: 5px 15px;
+	}
+	.title-unit {display: inline-block; font-size: 1.125rem}
+	.name-unit {font-size: 1.125rem; margin-right: 0}
+	.city-unit {font-size: 1.125rem}
+	.home div[class^="mod-"] {height: auto}
+	.mod-vid {margin-top: 30px}
+	.menu-more.active {
+		position: relative;
+		left: 0;
+		margin-top: 0;
+		line-height: 1;
+		list-style-type: none;
+	}
+	.list-submenu li {line-height: 1}
+	.menu-site li.no-border {padding: 0}
+
+	// Equipe
+	.profile-box {
+		height: auto;
+		.profile-content {padding: 20px 10px 0}
+		.socials {
+			position: initial;
+			margin: 15px 0 30px 0;
+		}
+		.wrp-descr {position: relative}
+	}
+	.wrp-info {margin-top: 0}
+
+	// Vídeos
+	.item-gallery-video {text-align: center}
+	.home .item-gallery-video {text-align: left}
+
+	// Banner
+	.mod-banner .carousel-item img {width: 100%}
+
+	// Destaques
+	.destaques .img-cover {margin: 0 auto}
+	.wrp-destaque, .wrp-videos {height: auto}
+
+	// Fotos
+	.pics {
+		.collection {
+			background: none;
+			text-align: left;
+		}
+		.title-collection {
+			margin-left: 0;
+			padding: 0;
+		}
+		.search {margin-bottom: 30px}
+	}
+
+	// Conteúdo
+	.content {width: 100%}
+
+	// Resultado de Busca
+	.divider {margin: 0 0 20px 0}
+	.collection {
+		margin-right: 0;
+		background: none;
+		text-align: center;
+	}
+	.title-collection {
+		margin-left: 0;
+		padding: 0;
+	}
+
+
+	// Ajuste para logo no Menu-Portal
+	.socials-info {width: 85%}
+	.wrp-interact {
+		float: none;
+		text-align: center;
+		margin-top: 2px;
+	}
+	.logo-bar {width: 40px}
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}

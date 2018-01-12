@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Arquivo para estilizar a seção de Downloads do Site Escola
+ *
+**/
+.chk-hidden {
+	display: none;
+	&:checked + .lbl-chk:before {
+		content: "\e9ca";
+		color: #F19820;
+		margin-right: 2px;
+		@include icomoon(1.25rem,300,1,-3px);
+	}
+}
+.lbl-chk {
+	cursor: pointer;
+	margin: 12px 0 0 0;
+	&:before {
+		content: "\e905";
+		color: #D8D8D8;
+		margin-right: 4.5px;
+		@include icomoon(1.1rem,300,1,-1px);
+	}
+}
+.downloads .restrict {background: url(img/lock-vid.svg)}
+.tbl-downloads {margin-top: 30px}
+.count-files {width: 125px}
+.table .lbl-chk {
+    margin: 12px 10px 0 0;
+	vertical-align: inherit;
+}
+.table {
+	th {
+	    border-top: none;
+	    color: $text-color;
+	    font-size: 0.9735rem;
+	    font-weight: 400;
+	}
+	& td {
+		cursor: pointer;
+		font-size: 0.9735rem;
+		font-weight: 200;
+	}
+	label {cursor: pointer}
+}
+.icon {
+	width: 35px;
+	height: 43px;
+	display: inline-block;
+	&.pdf {background: url(img/icon-pdf.png)}
+	&.ppt, &.pptx, &.pps, &.ppsx {background: url(img/icon-ppt.png)}
+	&.xls, &.xlsx {background: url(img/icon-xls.png)}
+	&.png {background: url(img/icon-png.png)}
+	&.doc, &.docx {background: url(img/icon-doc.png)}
+	&.zip {background: url(img/icon-zip.png)}
+	&.rar {background: url(img/icon-rar.png)}
+	&.jpg {background: url(img/icon-jpg.png)}
+}
+.btn-submit {
+	@include transition(all .5s ease-in-out);
+	&[disabled] {
+		background: rgba(244, 140, 16, 0.42);
+		border-color: rgba(244, 140, 16, 0.42);
+		cursor: not-allowed;
+		@include transition(all .5s ease-in-out);
+	}
+}

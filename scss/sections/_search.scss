@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Estilo da página de busca do Site Escola
+ *
+**/
+
+.wrap-result-search {padding-bottom: 15px;}
+.text-search {
+    color: #474F6E;
+    font-size: 1.2rem;
+    margin: 15px 0 30px;
+}
+.result-search {margin-bottom: 0}
+.title-result {
+  color: #1C1FAE;
+  font-size: 1.3rem;
+  display: block;
+}
+.type-result {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.lnk-search {
+  color: #006519;
+  font-size: 1rem;
+}
+.summary-search {
+  color: #747682;
+  font-size: .9rem;
+}
+.tp-video {background: url("img/tp-video.png") transparent center bottom no-repeat;}
+.tp-page {background: url("img/tp-page.png") transparent center bottom no-repeat;}
+.tp-star {background: url("img/tp-star.png") transparent center bottom no-repeat;}
+.tp-photo {background: url("img/tp-photo.png") transparent center bottom no-repeat;}
+.tp-archive {background: url("img/tp-archive.png") transparent center bottom no-repeat;}

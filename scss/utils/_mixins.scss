@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Arquivo usado para criação de mixins
+ *
+ */
+
+/*----------  Mixin para Shadow nos elementos  ----------*/
+@mixin box-shadow($x, $y, $blur, $color, $inset:"") {
+	-webkit-box-shadow:$x $y $blur $color #{$inset};
+  	-moz-box-shadow:$x $y $blur $color #{$inset};
+  	box-shadow:$x $y $blur $color #{$inset};
+}
+
+/*----------  Mixin para Font Icon - Icomoon  ----------*/
+@mixin icomoon($fs, $fw, $lh, $vh) {
+	font-family: 'icomoon';
+    speak: none;
+    font-size: $fs;
+    font-style: normal;
+    font-weight: $fw;
+    font-variant: normal;
+    text-transform: none;
+    line-height: $lh;
+    vertical-align: $vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

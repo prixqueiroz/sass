@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Estilo do Breadcrumb do Site
+ *
+**/
+.breadcrumb {
+	background: none;
+	height: 33px;
+	margin-bottom: 0;
+	padding: 5px 0 0 0;
+}
+.breadcrumb li {
+    background: url(img/breadcrumb.png) no-repeat right center;
+    display: inline-block;
+    font-size: 0.8125rem;
+    margin-right: 5px;
+    padding-right: 15px;
+    &:last-child {background: none}
+}
+.breadcrumb a {
+	color: #D8D8D8;
+	&:hover {color: inherit}
+	&.active {color: $text-color}
+}
+//.videos .breadcrumb {margin-top: 30px}

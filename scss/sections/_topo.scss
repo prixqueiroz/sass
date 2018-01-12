@@ -1,0 +1,316 @@
+@charset "UTF-8";
+/**
+ *
+ * Topo do site - Menu do Portal, Banner
+ *
+**/
+
+/*----------  Topo - Navegação e Perfil  ----------*/
+.menu-portal ul,
+.menu-site .menu-flex {
+	height: 100%;
+	margin-bottom: 0;
+	li {float: left}
+	& a:hover {text-decoration: none}
+}
+.menu-portal {
+	height: 50px;
+	background: #395878;
+	.container {padding: 0}
+	ul {
+		line-height: 50px;
+		display: inline-block;
+		li {
+			display: inline;
+			font-size: 0.8125rem;
+			font-weight: 300;
+			margin-right: 30px;
+		}
+		& a {color: $white}
+	}
+}
+.menu-site {
+	background-color: #45688D;
+	box-shadow: 0 3px 10px -5px #000;
+	height: 100px;
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 999;
+	}
+	.container.overflow {
+		height: 100px;
+		@include display(flex);
+		@include align-items(stretch);
+		@include flex-wrap(wrap);
+		@include flex-direction(row);
+		@include justify-content(space-between);
+	}
+	.menu-flex li {
+		position: relative;
+		&:before {
+			background: $white;
+			content: '';
+			height: 2px;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 10px;
+			width: 100%;
+			@include transform(translateY(24px));
+			@include transition(.3s ease)
+		}
+		&:hover:before, &.active:before {
+			@include transform(translateY(18px));
+			opacity: 1;
+		}
+	}
+}
+.menu-site .menu-flex a, .menu-site .menu-flex span {color: $white}
+.wrp-links {
+	@include display(flex);
+	@include align-items(center);
+	@include order(3);
+	.menus {
+		@include display(flex);
+		@include flex-direction(row);
+		@include flex-wrap(wrap);
+		@include align-items(center);
+		li {
+			font-size: 0.9735rem;
+			margin-right: 20px;
+			text-transform: uppercase;
+		}
+	}
+}
+.ico-close {
+	background: url(img/close-menu.svg) no-repeat center center;
+	width: 26px;
+	height: 27px;
+	display: block;
+	margin: 20px 0 -25px 0px;
+}
+
+/*----------  Logo da Educação Adventista  ----------*/
+.no-border:before {width: 0 !important}
+.wrp-logo {
+	display: inline-block;
+	margin-bottom: 0;
+	padding-top: 16px;
+}
+.logo {
+	background: url(img/logo.png) no-repeat center center;
+	display: block;
+	height: 58px;
+	width: 60px;
+}
+.school-head {
+	display: inline-block;
+	font-weight: 300;
+	line-height: 17px;
+	margin: 0 0 0 10px;
+	vertical-align: bottom;
+	width: 320px;
+}
+.title-unit {
+	display: block;
+	font-size: 0.7rem
+}
+.name-unit {
+	font-size: 1.2rem;
+	margin-right: 10px;
+}
+.city-unit {font-size: 0.75rem}
+
+/*----------  Logos de interação social  ----------*/
+.socials-info {
+	display: inline-block;
+	float: right;
+}
+.wrp-interact {
+	float: right;
+	margin: 12px 80px 0 0;
+}
+.fb, .twitter, .g-plus {margin-right: 10px !important}
+
+/*----------  Busca no Topo  ----------*/
+.search-site {
+	margin-left: 30px;
+	margin-right: 80px !important;
+}
+.inp-search {
+	background-color: #5E768F;
+	border: none;
+	border-radius: 13px;
+	color: $white;
+	font-size: 0.75rem;
+	height: 26px;
+	margin-left: 30px;
+	outline: none;
+	padding: 0 10px;
+	vertical-align: middle;
+	width: 175px;
+	@include placeholder {color: $white}
+	@include appearance(none);
+}
+
+/*----------  Foto do Usuário e informações sobre ele  ----------*/
+.lst-prof {
+	margin-right: 0 !important;
+	.icon-keyboard-arrow-down {vertical-align: super}
+}
+.wrp-profile {
+	display: inline-block;
+	margin: 5px 0 0 5px;
+	position: relative;
+	&:first-child {margin-left: 0}
+}
+.img-profile {
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	vertical-align: bottom;
+}
+.name-profile {color: $white}
+.icon-keyboard-arrow-down {
+    color: $white;
+    cursor: pointer;
+	font-size: 1.4rem;
+	vertical-align: -4px;
+}
+.profile-info {
+	background: $menu-more;
+	border-radius: 3px;
+	display: none;
+	margin-top: 5px;
+	padding: 20px;
+	position: absolute;
+	right: 0;
+	width: 260px;
+	z-index: 9999;
+	label {
+		color: $white;
+		font-size: 0.75rem;
+		margin-bottom: 0;
+	}
+	p {
+		color: #CACBCC;
+		font-size: 0.9375rem;
+		font-weight: lighter;
+	}
+}
+.btn-login {
+	background-color: #5A9EDF;
+	border-radius: 23px;
+	color: $white;
+	float: right;
+	font-size: 0.875rem;
+	margin-top: 12px;
+	padding: 3px 15px;
+	&:hover {color: $white}
+}
+
+/*----------  Logout  ----------*/
+.logout {
+	background-color: #5A9EDF;
+	border-radius: 3px;
+	color: $white;
+	display: block;
+	margin-top: 15px;
+	text-align: center;
+	padding: 8px;
+	width: 100%;
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+/*----------  Menu Mais  ----------*/
+.lnk-more {
+	//height: 100%;
+	margin-right: 0 !important;
+	//padding-top: 35px;
+	&:before {width: calc(100% - 21px) !important}
+}
+.menu-site li.lnk-more:before {top: 50px}
+.lnk-more.active {
+	& .more-opt {color: $color-active}
+	& .icon-keyboard-arrow-down {color: $color-active}
+}
+.name-school {
+	color: $white;
+	font-size: 0.75rem;
+	margin-bottom: 0;
+}
+.more-opt {cursor: pointer}
+.menu-more {
+	background-color: $menu-more;
+	border-top: 3px solid #588EC8;
+	left: 0;
+	margin-top: 32px;
+	opacity: 0;
+	padding: 10px 100px;
+	position: fixed;
+	right: 0;
+	visibility: hidden;
+	z-index: 999;
+	@include transition(all .3s ease);
+	&:hover {
+		opacity: 1;
+		visibility: visible;
+	}
+	a {
+		color: rgba(255,255,255,0.55) !important;
+		font-size: 0.9375rem;
+		font-weight: 100;
+		text-transform: initial;
+      &:hover {color: rgba(255, 255, 255, 0.85) !important;}
+	}
+	li {
+		margin-bottom: 10px;
+		margin-right: 0 !important;
+		&:before {background: none !important}
+	}
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		@include transition(all .3s ease);
+	}
+}
+.menu-site.fixed + .menu-more {top: 100px}
+.title-more {
+	color: $white;
+	font-size: 1rem;
+	font-weight: 300;
+	margin: 20px 0 10px 0;
+	text-transform: initial;
+}
+.list-submenu li {
+	display: block;
+	width: 100%;
+}
+/*----------  Topo - Imagem  ----------*/
+.wrp-topo .img-fluid,
+.wrp-topo .carousel-inner>.carousel-item>img,
+.wrp-topo .carousel-inner>.carousel-item>a>img {
+	height: 350px;
+	width: 100%;
+}
+.carousel-inner>.carousel-item>img,
+.carousel-inner>.carousel-item>a>img {max-height: 450px}
+.carousel-indicators li {
+	background-color: $white;
+	border: 1px solid #D8D8D8;
+	width: 9px;
+    height: 9px;
+}
+.carousel-indicators .active {
+	width: 9px;
+    height: 9px;
+    background-color: #484A51;
+    border: #484A51;
+    margin-bottom: 1px;
+}

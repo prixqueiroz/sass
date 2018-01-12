@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+/**
+ *
+ * Estilo da página das fotos e álbuns do Site Escola
+ *
+**/
+.photos {
+	padding: 0 15px;
+	.view-more {
+		font-size: 0.8rem;
+		font-weight: 500;
+		top: 2px;
+	}
+	.view-more:hover {color: $color-alb}
+	.view-more {
+		position: absolute;
+		right: 0;
+		top: 2px;
+		color: $color-alb;
+	}
+}
+.pics {
+	.breadcrumb {padding: 5px 12px}
+	.search {padding-right: 12px}
+}
+.divider {
+	margin: 20px 15px;
+	position: relative;
+	width: 100%
+}
+.collection {
+	background: url(img/line.png) repeat-x center;
+	color: $text-color;
+	margin-right: 65px;
+	text-align: center;
+}
+.title-collection {
+	background: $white;
+	color: $color-alb;
+	display: inline;
+	font-size: 1.125rem;
+	font-weight: normal;
+	line-height: 1.5rem;
+	padding: 0 10px;
+	margin-left: 50px;
+}
+.wrp-albuns, .wrp-img {
+	margin: 0 auto 30px;
+	max-width: 372px;
+	img {
+		width: 100%;
+		border-radius: 4px 4px 0 0;
+	}
+}
+.wrp-albuns {
+	border: 1px solid #B9C2CB;
+	border-radius: 4px;
+	padding: 0 0 15px 0;
+	h3 {line-height: 1.2rem}
+}
+.wrp-img img {border-radius: 5px}
+.wrp-albuns h3,
+.wrp-albuns h4,
+.wrp-albuns p {
+	text-align: center;
+	padding: 0 15px;
+}
+.title-album {
+	color: #474F6E;
+	font-size: 1.125rem;
+	font-weight: 300;
+	&:hover {color: $text-color}
+}
+.desc-alb {
+	color: #95A0B4;
+	font-size: 1rem;
+	font-weight: 300;
+	margin: 15px 0 5px;
+}
+.qt-photos {
+	color: #95A0B4;
+	font-size: 0.875rem;
+	font-weight: 300;
+	margin-bottom: 0;
+}
+.pics .subtitle-section {
+	margin-bottom: 30px;
+	padding-left: 0.9735rem;
+}
+.pgn {padding: 0}
+
+.restricted-alb {
+	background: rgba(43,47,52,.95);
+	border-radius: 3px 3px 0 0;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	@include display(flex);
+	@include justify-content(center);
+	@include align-items(center);
+	@include flex-direction(column);
+}
+.lock-alb {
+	height: 101px;
+	width: 101px;
+}
+
+
+/**
+ *
+ * overflow: hidden --> utilizado para a animação de translate da imagem
+ * (quando o evento :hover for acionado) não ultrapassar o tamanho do figure
+ *
+ */
+.item-gallery,
+.item-gallery-video {
+	position: relative;
+	overflow: hidden
+}
+
+/**
+ *
+ * Animação quando o evento hover for acionado na imagem. 
+ * Cria uma animação dando zoom na imagem e criando um overlay com 
+ * uma lupa para indicar a possibilidade de zoom na imagem
+ *
+ */
+.wrp-img a {
+	&:hover>img {@include transform(scale3d(1.1,1.1,1.1))}
+	&>img {
+		@include transition(transform .15s ease 0s);
+		@include transform(scale3d(1,1,1));
+		height: 100%;
+		width: 100%;
+	}
+	&:hover .gallery-poster {
+		background-color: rgba(0,0,0,.7);
+		&>p, &>img {opacity: 1}
+	}
+}
+.gallery-poster {
+	@include transition(background-color .15s ease 0s);
+	bottom: 0;
+	cursor: pointer;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	&>p, &>img {
+		@include transition(opacity .3s ease 0s);
+		color: $white;
+		opacity: 0;
+		position: absolute;
+		width: 100%;
+	}
+	&>p {
+		bottom: 0;
+		font-weight: 300;
+		text-align: left;
+		padding-left: 15px;
+	}
+	&>img {
+		height: 20px;
+		left: 50%;
+		margin-left: -10px;
+		margin-right: -10px;
+		text-align: center;
+		top: 50%;
+		width: 20px;
+	}
+    &>img.poster-video {
+        height: 49px;
+        left: 44%;
+        opacity: 1;
+        top: 41%;
+        width: 48px;
+    }
+}
+
+/*----------  Formatações da galeria  ----------*/
+.lg-sub-html p {font-size: 1rem}
+.lg-outer .lg-thumb-item {border: none}
+.lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {border: 2px solid #a90707}
+
